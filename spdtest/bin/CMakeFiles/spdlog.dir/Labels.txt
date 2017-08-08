@@ -1,0 +1,13 @@
+# Target labels
+ spdlog
+# Source files and their labels
+/home/ting/Proj/spdtest/bin/CMakeFiles/spdlog
+/home/ting/Proj/spdtest/bin/CMakeFiles/spdlog.rule
+/home/ting/Proj/spdtest/bin/CMakeFiles/spdlog-complete.rule
+/home/ting/Proj/spdtest/bin/spdlog-prefix/src/spdlog-stamp/spdlog-install.rule
+/home/ting/Proj/spdtest/bin/spdlog-prefix/src/spdlog-stamp/spdlog-mkdir.rule
+/home/ting/Proj/spdtest/bin/spdlog-prefix/src/spdlog-stamp/spdlog-download.rule
+/home/ting/Proj/spdtest/bin/spdlog-prefix/src/spdlog-stamp/spdlog-update.rule
+/home/ting/Proj/spdtest/bin/spdlog-prefix/src/spdlog-stamp/spdlog-patch.rule
+/home/ting/Proj/spdtest/bin/spdlog-prefix/src/spdlog-stamp/spdlog-configure.rule
+/home/ting/Proj/spdtest/bin/spdlog-prefix/src/spdlog-stamp/spdlog-build.rule

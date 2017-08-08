@@ -1,0 +1,1 @@
+/usr/bin/g++      CMakeFiles/spdtest.dir/test.cpp.o  -o spdtest -rdynamic /usr/lib/libQt5Core.so.5.7.1 -pthread 

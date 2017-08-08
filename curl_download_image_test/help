@@ -1,0 +1,4 @@
+Compiled with: g++ main.cpp -o curl_download_image -lcurl 
+and tested with:
+
+./curl_download_image https://static.pexels.com/photos/5390/sunset-hands-love-woman.jpg

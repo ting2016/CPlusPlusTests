@@ -1,0 +1,1 @@
+cmd='/usr/bin/cmake;-DCMAKE_BUILD_TYPE=Release;-DCMAKE_INSTALL_PREFIX=<INSTALL_DIR>;-DSPDLOG_BUILD_TESTING=OFF;-GCodeBlocks - Unix Makefiles;/home/ting/Proj/spdtest/bin/spdlog-prefix/src/spdlog'

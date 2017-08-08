@@ -1,0 +1,114 @@
+[2017-01-26 15:47:50.928] [mainLog] [info] ***%I [%H:%M:%S %z] %v ***
+[2017-01-27 10:29:01.577] [mainLog] [info] 	::another string
+
+
+[2017-01-27 10:47:07.379] [mainLog] [info] 	::another string
+
+
+[2017-01-27 10:47:07.379] [mainLog] [info] 1
+[2017-01-27 10:49:36.293] [mainLog] [info] 	::another string
+
+
+[2017-01-27 10:49:36.293] [mainLog] [info] 1
+[2017-01-27 10:49:36.293] [mainLog] [info] ***%v*%v*%v***
+[2017-01-27 10:50:32.328] [mainLog] [info] 	::another string
+
+
+[2017-01-27 10:50:32.328] [mainLog] [info] 1
+[2017-01-27 10:50:32.328] [mainLog] [critical] ***%v*%v*%v***
+[2017-01-27 10:57:04.722] [mainLog] [info] 	::another string
+
+
+[2017-01-27 10:57:04.722] [mainLog] [info] 1
+[2017-01-27 10:57:04.722] [mainLog] [critical] ***%v*%v*%v***
+[2017-01-27 10:57:04.722] [mainLog] [critical] >>>>>>>>> %H:%M:%S %z %v <<<<<<<<<
+[2017-01-27 11:01:37.695] [mainLog] [info] 	::another string
+
+
+[2017-01-27 11:01:37.695] [mainLog] [info] 1
+[2017-01-27 11:01:37.695] [mainLog] [critical] ***%v*%v*%v***
+[2017-01-27 11:01:37.695] [mainLog] [critical] >>>>>>>>> %H:%M:%S %z %v <<<<<<<<<
+[2017-01-27 11:17:34.631] [mainLog] [info] 1
+[2017-01-27 11:17:34.631] [mainLog] [critical] ***%v*%v*%v***
+[2017-01-27 11:17:34.631] [mainLog] [critical] >>>>>>>>> %H:%M:%S %z %v <<<<<<<<<
+[2017-01-27 11:23:56.802] [mainLog] [info] 1
+[2017-01-27 11:23:56.802] [mainLog] [critical] ***%v*%v*%v***
+[2017-01-27 11:23:56.802] [mainLog] [critical] >>>>>>>>> %H:%M:%S %z %v <<<<<<<<<
+[2017-01-27 11:28:19.585] [mainLog] [info] 1
+[2017-01-27 11:28:19.585] [mainLog] [critical] ***%v*%v*%v***
+[2017-01-27 11:28:19.585] [mainLog] [critical] >>>>>>>>> %H:%M:%S %z %v <<<<<<<<<
+[2017-01-27 11:28:41.417] [mainLog] [info] 1
+[2017-01-27 11:28:41.417] [mainLog] [critical] ***%v*%v*%v***
+[2017-01-27 11:28:41.417] [mainLog] [critical] >>>>>>>>> %H:%M:%S %z %v <<<<<<<<<
+[2017-01-27 11:29:37.950] [mainLog] [info] 1
+[2017-01-27 11:29:37.950] [mainLog] [critical] ***%v*%v*%v***
+[2017-01-27 11:29:37.950] [mainLog] [critical] >>>>>>>>> %H:%M:%S %z %v <<<<<<<<<
+[2017-01-27 11:30:47.253] [mainLog] [info] 1
+[2017-01-27 11:30:47.253] [mainLog] [critical] ***%v*%v*%v***
+[2017-01-27 11:30:47.253] [mainLog] [critical] >>>>>>>>> %H:%M:%S %z %v <<<<<<<<<
+[2017-01-27 12:49:48.529] [mainLog] [info] 1
+[2017-01-27 12:49:48.529] [mainLog] [critical] ***%v*%v*%v***
+[2017-01-27 12:49:48.529] [mainLog] [critical] >>>>>>>>> %H:%M:%S %z %v <<<<<<<<<
+[2017-01-27 12:51:17.589] [mainLog] [info] 1
+[2017-01-27 12:51:17.589] [mainLog] [critical] ***%v*%v*%v***
+[2017-01-27 12:51:17.589] [mainLog] [critical] >>>>>>>>> %H:%M:%S %z %v <<<<<<<<<
+[2017-01-27 12:52:47.714] [mainLog] [info] 	::another string
+
+
+[2017-01-27 12:52:47.714] [mainLog] [info] 1
+[2017-01-27 12:52:47.714] [mainLog] [critical] ***%v*%v*%v***
+[2017-01-27 12:52:47.714] [mainLog] [critical] >>>>>>>>> %H:%M:%S %z %v <<<<<<<<<
+[2017-01-27 13:15:23.970] [mainLog] [info] 	::another string
+
+
+[2017-01-27 13:15:23.970] [mainLog] [critical] 	::another string
+
+
+[2017-01-27 13:15:23.970] [mainLog] [info] 1
+[2017-01-27 13:15:23.970] [mainLog] [critical] ***%v*%v*%v***
+[2017-01-27 13:15:23.970] [mainLog] [critical] >>>>>>>>> %H:%M:%S %z %v <<<<<<<<<
+[2017-01-27 13:18:38.801] [mainLog] [info] 1
+[2017-01-27 13:18:38.801] [mainLog] [critical] ***%v*%v*%v***
+[2017-01-27 13:18:38.801] [mainLog] [critical] >>>>>>>>> %H:%M:%S %z %v <<<<<<<<<
+[2017-01-27 13:19:33.451] [mainLog] [info] 1
+[2017-01-27 13:19:33.451] [mainLog] [critical] ***%v*%v*%v***
+[2017-01-27 13:19:33.451] [mainLog] [critical] >>>>>>>>> %H:%M:%S %z %v <<<<<<<<<
+[2017-01-27 13:19:42.272] [mainLog] [info] 1
+[2017-01-27 13:19:42.272] [mainLog] [critical] ***%v*%v*%v***
+[2017-01-27 13:19:42.272] [mainLog] [critical] >>>>>>>>> %H:%M:%S %z %v <<<<<<<<<
+[2017-01-27 13:21:12.529] [mainLog] [info] 	::another string
+
+
+[2017-01-27 13:21:45.487] [mainLog] [info] 	::another string
+
+
+[2017-01-27 13:22:48.770] [mainLog] [info] 	::another string
+
+
+[2017-01-27 13:38:07.395] [mainLog] [info] 	::another string
+
+
+[2017-01-27 13:38:07.395] [mainLog] [critical] 	::another string
+
+
+[2017-01-27 14:53:43.175] [mainLog] [critical] 	::another string
+
+
+[2017-01-27 14:54:26.617] [mainLog] [critical] 	::another string
+
+
+[2017-01-27 14:54:26.617] [mainLog] [critical] 	::another string
+
+
+[2017-01-27 14:57:00.511] [mainLog] [critical] 	::another string
+
+
+[2017-01-27 14:58:43.954] [mainLog] [info] 	::another string
+
+
+[2017-01-27 15:00:11.765] [mainLog] [error] 	::another string
+
+
+[2017-01-27 15:01:40.456] [mainLog] [warning] 	::another string
+
+

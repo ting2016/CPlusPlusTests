@@ -1,0 +1,4 @@
+/home/ting/Proj/spdtest/bin/CMakeFiles/rebuild_cache.dir
+/home/ting/Proj/spdtest/bin/CMakeFiles/edit_cache.dir
+/home/ting/Proj/spdtest/bin/CMakeFiles/spdlog.dir
+/home/ting/Proj/spdtest/bin/CMakeFiles/spdtest.dir

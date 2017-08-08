@@ -1,0 +1,10 @@
+steps to create you own shared libraries:
+1. create object file
+gcc -c -Wall -Werror -fpic foo.c
+2. create a shared library from object file,give it a name libfoo.so
+gcc -shared -o libfoo.so foo.o
+3. link with the shared library, don't forget to tell GCC where to find the shared library
+gcc -LsharedLibray's directory -Wall -o test main.c -lfoo
+4. run binary and the shared library available at run time
+$ export LD_LIBRARY_PATH=shared library's directory:$LD_LIBRARY_PATH
+$ ./test

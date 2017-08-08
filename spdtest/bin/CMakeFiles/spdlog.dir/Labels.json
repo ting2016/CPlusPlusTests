@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/ting/Proj/spdtest/bin/CMakeFiles/spdlog"
+		},
+		{
+			"file" : "/home/ting/Proj/spdtest/bin/CMakeFiles/spdlog.rule"
+		},
+		{
+			"file" : "/home/ting/Proj/spdtest/bin/CMakeFiles/spdlog-complete.rule"
+		},
+		{
+			"file" : "/home/ting/Proj/spdtest/bin/spdlog-prefix/src/spdlog-stamp/spdlog-install.rule"
+		},
+		{
+			"file" : "/home/ting/Proj/spdtest/bin/spdlog-prefix/src/spdlog-stamp/spdlog-mkdir.rule"
+		},
+		{
+			"file" : "/home/ting/Proj/spdtest/bin/spdlog-prefix/src/spdlog-stamp/spdlog-download.rule"
+		},
+		{
+			"file" : "/home/ting/Proj/spdtest/bin/spdlog-prefix/src/spdlog-stamp/spdlog-update.rule"
+		},
+		{
+			"file" : "/home/ting/Proj/spdtest/bin/spdlog-prefix/src/spdlog-stamp/spdlog-patch.rule"
+		},
+		{
+			"file" : "/home/ting/Proj/spdtest/bin/spdlog-prefix/src/spdlog-stamp/spdlog-configure.rule"
+		},
+		{
+			"file" : "/home/ting/Proj/spdtest/bin/spdlog-prefix/src/spdlog-stamp/spdlog-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"spdlog"
+		],
+		"name" : "spdlog"
+	}
+}
