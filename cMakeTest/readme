@@ -1,0 +1,4 @@
+To build your project hello, just do
+
+$ cmake -H. -Bbuild
+$ cmake --build build -- -j3
