@@ -2,11 +2,9 @@
 #define LINKDELIST_H
 #include "node.h"
 #include <iostream>
-#include "linkedlist_iterator.h"
-template<class T> class Linkedlist_iterator;
+
 template<class T>
 class Linkedlist{
-friend class Linkedlist_iterator<T>;
 private:
 	Node<T>* head;
 	Node<T>* tail;
@@ -14,17 +12,16 @@ public:
 	Linkedlist(const Linkedlist& l);
 	Linkedlist(const Node<T>* newNode);
 	Linkedlist();
-	typedef Linkedlist_iterator<T> Iterator;
-Linkedlist& operator=(Linkedlist& otherl);
+	Linkedlist& operator=(Linkedlist& otherl);
 	~Linkedlist();
 	void empty();
 	void print();
 	void insertToHead(const T& newElem);
 	void insertToTail(const T& newElem);
-	Iterator begin();
-	Iterator end();
-	
-	
+	Linkedlist_iterator<T> begin(){return Linkedlist_iterator<T>(head);}
+	Linkedlist_iterator<T> end(){ return Linkedlist_iterator<T>();}
+	Linkedlist_const_iterator<T> cbegin(){return Linkedlist_const_iterator<T>(head);}
+	Linkedlist_const_iterator<T> cend(){ return Linkedlist_const_iterator<T>();}
 };
 
 template<class T>
@@ -116,8 +113,4 @@ void Linkedlist<T>::insertToTail(const T& newElem){
 	tail = tail->next;
 }
 
-template<class T>
-Linkedlist<T>::Iterator  Linkedlist<T>::begin(){
-	return Iterator(head);
-}
 #endif 
