@@ -9,6 +9,8 @@ private:
 	Node<T>* head;
 	Node<T>* tail;
 public:
+	typedef Linkedlist_iterator<T> Iterator;
+	typedef Linkedlist_const_iterator<T> Const_Iterator;
 	Linkedlist(const Linkedlist& l);
 	Linkedlist(const Node<T>* newNode);
 	Linkedlist();
@@ -18,10 +20,10 @@ public:
 	void print();
 	void insertToHead(const T& newElem);
 	void insertToTail(const T& newElem);
-	Linkedlist_iterator<T> begin(){return Linkedlist_iterator<T>(head);}
-	Linkedlist_iterator<T> end(){ return Linkedlist_iterator<T>();}
-	Linkedlist_const_iterator<T> cbegin(){return Linkedlist_const_iterator<T>(head);}
-	Linkedlist_const_iterator<T> cend(){ return Linkedlist_const_iterator<T>();}
+	Iterator begin(){return Linkedlist_iterator<T>(head);}
+	Iterator end(){ return Linkedlist_iterator<T>();}
+	Const_Iterator cbegin(){return Linkedlist_const_iterator<T>(head);}
+	Const_Iterator cend(){ return Linkedlist_const_iterator<T>();}
 };
 
 template<class T>

@@ -36,7 +36,7 @@ int main(){
 	}
 	if((it1==list1.end())&&(it4==list4.end()))
 		std::cout<<"list1 and list4 is the same!"<<std::endl;
-	Linkedlist_iterator<int> it3 = list3.begin();
+	auto it3 = list3.begin();
 	//return 1, then move to second element
 	std::cout<<"\nit3 now points to : ";
 	(*(it3++)).print();
