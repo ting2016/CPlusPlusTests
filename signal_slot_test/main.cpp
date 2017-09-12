@@ -1,7 +1,7 @@
 #include "counter.h"
 #include <iostream>
 using namespace std;
-int main(int argc, char *argv[])
+int main()
 {
     Counter a, b;
         QObject::connect(&a, SIGNAL(valueChanged(int)),
