@@ -23,5 +23,4 @@ int main()
     thread.start();
     QObject::connect(&a, &Counter::mysignal, &b, &Counter::myslot);
     a.emitSignal();
-    thread.wait();
 }

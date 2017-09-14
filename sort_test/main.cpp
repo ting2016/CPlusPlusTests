@@ -15,14 +15,14 @@ int main(){
 	v.push_back(6);
 	v.push_back(7);
 	v.push_back(9);
-	display(v);
+	//display(v);
 	//bubbleSort(v);
 	//insertSort(v);
 	//selectSort(v);
 	//mergeSort(v,0, v.size()-1);
 	//shellSort(v);
-	quickSort(v,0, v.size()-1);
-	std::cout<<"after bubble sort:\n";
-	display(v);
-
+	//quickSort(v,0, v.size()-1);
+	//std::cout<<"after bubble sort:\n";
+	//display(v);
+	heapSortTest();
 }

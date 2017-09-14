@@ -26,6 +26,13 @@ namespace ting{
 		void  merge(std::vector<T>& v, int low, int mid, int high);
 		template<class T>
 		void mergeSort(std::vector<T>& v, int low, int high);
+		template<class T>
+		void heapSort(std::vector<T>& v);
+		template<class T>
+		void buildMaxHeap(std::vector<T>& v);
+		template<class T>
+		void heapify(std::vector<T>& v,int n, int i);
+		void heapSortTest();
 	}
 }
 
@@ -167,9 +174,62 @@ int ting::sorts::partitionForQuick(std::vector<T>& v, const int& left, const int
 		std::swap(v[leftPoint+1], v[right]);
 		return leftPoint +1;
 	}
-} 
+}
+// heapify sub_tree of v the subtrees of which are alreay maxheaps:  n is the max index, i is the index for the root
+template<class T>
+void ting::sorts::heapify(std::vector<T>& v, int n, int i){
+	int largest = i;
+	int l = 2*i+1;
+	int r = 2*i+2;
+	if((l<=n)&&(v[l]>v[largest])){
+		largest = l;
+	}
+	if(r<=n&&(v[r]>v[largest])){
+		largest =r;
+	}
+	if(largest!=i){
+		std::swap(v[i],v[largest]);
+		heapify(v,n, largest);
+	}
+	
+	
+}
 
-void ting::sorts::sortTest(){
+template<class T>
+void ting::sorts::buildMaxHeap(std::vector<T>& v){
+	//heapify only non_leaf nodes from below to top
+	for(int i = v.size()/2 -1; i>=0; i--){
+		heapify(v,v.size()-1, i);
+	}
+}
+//do heapsort upon built heap
+template<class T>
+void ting::sorts::heapSort(std::vector<T>& v){
+	buildMaxHeap(v);
+	display(v);
+	//i start as the max index of v
+	int i = v.size()-1;
+	while(i>0){
+		//make v[i] as the max of elems from index 0 to i
+		std::swap(v[0], v[i]);
+		//heapify elems before index i
+		heapify(v,i-1, 0);
+		i--;
+	}
+}
+
+
+void ting::sorts::heapSortTest(){
+	std::vector<int> v;
+	v.push_back(2);
+	v.push_back(4);
+	v.push_back(1);
+	v.push_back(10);
+	v.push_back(18);
+	v.push_back(12);
+	v.push_back(5);
+	heapSort(v);
+	display(v);
 	
 }
 
