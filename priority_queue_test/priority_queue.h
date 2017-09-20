@@ -128,12 +128,13 @@ void ting::Priority_queue<T>::heapify(int index){
 		heapify(max);
 	}	
 }
+
 template<class T>
 void ting::Priority_queue<T>::buildHeap(){
 	if(m_vec.size()==1)
 		return;
 	//heapify every non-leave node
-	for(int i = m_vec.size()/2 -1;i--; i>=0){
+	for(int i = m_vec.size()/2 -1;i>=0;i--){
 		heapify(i);
 	}
 
