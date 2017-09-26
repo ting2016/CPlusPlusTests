@@ -30,9 +30,7 @@ namespace ting{
             template<class key, class value,class F = Hash_function<key>>
             class My_Unordered_Map{
                     public:
-
                             typedef int (*hasher)();
-
                             My_Unordered_Map(){
                                     for(int i = 0; i<BUCKET_SIZE;i++){
                                             my_map[i]= nullptr;
@@ -59,39 +57,68 @@ namespace ting{
                             //else insert new node at the front
                             void insert(const std::pair<key, value>& pair){
                                 int bucketIndex = hashFunc(pair.first);
-                                Node<key, value>* bPtr = my_map[bucketIndex];
+                                auto cPtr = my_map[bucketIndex];
                                 std::cout<<"bucket Index for pair:"<<pair.first<<"-->"<<pair.second<<" is "<<bucketIndex<<std::endl;
                                 //not nullptr
-                                while(bPtr){
-                                    if(bPtr->k!=pair.first)
-                                        bPtr= bPtr->next;
-                                    else
+                                while(cPtr){
+                                    if(cPtr->k!=pair.first)
+                                        cPtr= cPtr->next;
+                                    else{
                                         std::cout<<" find a node with the same key"<<std::endl;
-                                        break;
+                                        std::cout<<"update the value with new"<<std::endl;
+                                        cPtr->v = pair.second;
+                                        return;
+                                    }
                                 }
-                                if(bPtr){
-                                    std::cout<<"update the value with new"<<std::endl;
-                                    bPtr->v = pair.second;
-                                }
-                                else{
-                                    std::cout<<"..."<<std::endl;
                                     //add a new node to the end of given bucket
                                     auto newNode = new Node<key, value>(pair);
-                                    bPtr = newNode;
+                                    newNode->next = my_map[bucketIndex];
+                                    my_map[bucketIndex] = newNode;
                                     num++;
+                            }
+                            void insert(const key& k, const value& v){
+                                int bucketIndex = hashFunc(k);
+                                auto bPtr = my_map[bucketIndex];
+                                std::cout<<"bucket Index for pair:"<<k<<"-->"<<v<<" is "<<bucketIndex<<std::endl;
+                                //not nullptr
+                                while(bPtr){
+                                    if(bPtr->k!=k)
+                                        bPtr= bPtr->next;
+                                    else{
+                                        std::cout<<" find a node with the same key"<<std::endl;
+                                        std::cout<<"update the value with new"<<std::endl;
+                                        bPtr->v = v;
+                                        return;
+                                    }
                                 }
+                                //add a new node to the given bucket
+                                auto newNode = new Node<key, value>(k,v);
+                                newNode->next = my_map[bucketIndex];
+                                my_map[bucketIndex] = newNode;
+                                num++;
                             }
                             //delete the pair with key from map, if delete, return true, if key not found, return false
                             bool erase(const key& k){
                                 int bucketIndex = hashFunc(k);
-                                Node<key, value>* bPtr = my_map[bucketIndex];
-                                if(!bPtr){
-                                    if(bPtr->k==k){
-                                       std::cout<<"find a node with key = "<< k << std::endl;
-                                       num--;
-                                       return true;
+				std::cout<<"index for the k to be erased is: "<<bucketIndex<<std::endl;
+                                Node<key, value>* cPtr = my_map[bucketIndex];
+                                auto prevPtr =cPtr;
+                                while(cPtr){
+                                    if(cPtr->k==k){
+					std::cout<<"find a node with matched key: "<<cPtr->k<<std::endl;
+                                        if(cPtr==my_map[bucketIndex]){
+                                            std::cout<<"first node with key = "<< k << std::endl;
+                                            my_map[bucketIndex] = cPtr->next;
+                                        }
+                                        else{
+                                            prevPtr->next = cPtr->next;
+                                        }
+                                        delete cPtr;
+                                        num--;
+                                        return true;
                                     }
-                                    bPtr= bPtr->next;
+                                    prevPtr = cPtr;
+                                    cPtr = cPtr->next;
                                 }
                                 std::cout<<"node with key = "<< k << " not found" << std::endl;
                                 return false;
@@ -99,10 +126,11 @@ namespace ting{
 
                             void print(){
                                 for(int i = 0; i<BUCKET_SIZE; i++){
-                                    Node<key, value>* bPtr = my_map[i];
+                                    auto bPtr = my_map[i];
                                     std::cout<<"bucket: "<<i<<" ";
-                                    while(!bPtr){
+                                    while(bPtr){
                                         std::cout<<bPtr->k<<"-->"<<bPtr->v<< " ";
+                                        bPtr=bPtr->next;
                                     }
                                     std::cout<<std::endl;
                                 }
@@ -125,6 +153,12 @@ namespace ting{
 int main(){
     using namespace ting::unordered_map;
     My_Unordered_Map<int, std::string,  Hash_function<int>> myMap;
-    myMap.insert(std::pair<int, std::string>(33, "hello"));
+    myMap.insert(33, "hello");
+    myMap.insert(std::pair<int, std::string>(11,"haha"));
+    myMap.insert(53, "hello2");
+    myMap.erase(53);
+    myMap.erase(43);
     myMap.print();
+
 }
+
