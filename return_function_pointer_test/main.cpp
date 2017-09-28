@@ -1,15 +1,15 @@
 #include <iostream>
 using namespace std;
 
-int f1() {
-    return 1;
+int f1(int i) {
+    return i;
 }
 
-int f2() {
-    return 2;
+int f2(int i) {
+    return i*2;
 }
 
-typedef int (*fptr)();
+typedef int (*fptr)(int);
 
 
 fptr f( char c ) {
@@ -24,6 +24,8 @@ fptr f( char c ) {
 int main() {
     char c = '1';
     fptr fp = f( c );
-    cout << fp() << endl;
+    fptr fp2 =f2;
+    cout << fp(1) << endl;
+    cout << fp2(2) << endl;
 }
 

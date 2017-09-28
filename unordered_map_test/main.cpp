@@ -5,6 +5,20 @@
 #define BUCKET_SIZE 20
 namespace ting{
         namespace unordered_map{
+	        //test for custom class as key
+		class Person{
+		public:
+			int age;
+			bool sex ;
+		public:
+			//friend class Hash_function<Person>;
+			Person(const int age, const bool sex):age(age),sex(sex){}
+			//need to overload == operator
+   			bool operator==(const Person& other_p){return ((age==other_p.age)&&(sex==other_p.sex));}
+			friend std::ostream& operator<<(std::ostream& o, const Person& p);
+		};
+
+	    //hash class template
             template<class key>
             class Hash_function{
                     int operator()(const key& k) const{
@@ -14,6 +28,26 @@ namespace ting{
                     friend class My_Unordered_Map;
 
             };
+
+	    //class template specialization    
+            template<>
+	    class Hash_function<Person>{
+	    public:
+		int operator()(const Person& p) const{
+			if(p.sex){
+				return (p.age+1)%BUCKET_SIZE;
+			}
+			else{
+				return p.age%BUCKET_SIZE;
+			}	
+		}
+            
+	    };
+
+            std::ostream& operator<<(std::ostream& o, const Person& p){
+		o<<"age: "<<p.age<<" sex: "<<p.sex;
+		return o;
+	    }
 
             template<class key, class value>
             class Node{
@@ -82,14 +116,13 @@ namespace ting{
                                 std::cout<<"bucket Index for pair:"<<k<<"-->"<<v<<" is "<<bucketIndex<<std::endl;
                                 //not nullptr
                                 while(bPtr){
-                                    if(bPtr->k!=k)
-                                        bPtr= bPtr->next;
-                                    else{
+                                    if(bPtr->k==k){
                                         std::cout<<" find a node with the same key"<<std::endl;
                                         std::cout<<"update the value with new"<<std::endl;
                                         bPtr->v = v;
                                         return;
                                     }
+                                    bPtr= bPtr->next;
                                 }
                                 //add a new node to the given bucket
                                 auto newNode = new Node<key, value>(k,v);
@@ -159,6 +192,13 @@ int main(){
     myMap.erase(53);
     myMap.erase(43);
     myMap.print();
+/*************test for custom class key********************/
+    My_Unordered_Map<Person, std::string, Hash_function<Person>> myCustomMap;
+    myCustomMap.insert(Person(33,1),"wangming");
+    myCustomMap.insert(Person(33,0),"lingling");
+    myCustomMap.insert(Person(53,1),"niuniu");
+    myCustomMap.insert(Person(11,0),"hehe");
+    myCustomMap.print();
 
 }
 
