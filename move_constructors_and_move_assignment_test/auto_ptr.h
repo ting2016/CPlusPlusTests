@@ -6,8 +6,13 @@ class Auto_ptr{
 	private:
 		T* m_ptr;
 	public:
-		Auto_ptr(T* ptr = nullptr):m_ptr(ptr){}
-		~Auto_ptr(){delete m_ptr;}
+		Auto_ptr(T* ptr = nullptr):m_ptr(ptr){
+			std::cout<<"Auto_ptr: default constructor is called"<<std::endl;
+		}
+		~Auto_ptr(){
+			std::cout<<"Auto_ptr: destructor is called"<<std::endl;
+			delete m_ptr;
+		}
 		//copy constructor
 		Auto_ptr(const Auto_ptr& a);
 		//copy assignment
@@ -25,12 +30,14 @@ class Auto_ptr{
 template<class T>
 //copy constructor
 Auto_ptr<T>::Auto_ptr(const Auto_ptr& a){
+	std::cout<<"Auto_ptr: copy constructor is called"<<std::endl;
         m_ptr = new T;
-        *m_ptr = a.m_ptr;
+        *m_ptr = *a.m_ptr;
 }
 //copy assignment
 template<class T>
 Auto_ptr<T>& Auto_ptr<T>::operator=(const Auto_ptr& a){
+	std::cout<<"Auto_ptr: copy assignment is called"<<std::endl;
         if(&a == this)
                 return *this;
         delete m_ptr;
@@ -56,11 +63,13 @@ T* Auto_ptr<T>::operator->() const {
 //move constructor
 template<class T>
 Auto_ptr<T>::Auto_ptr(Auto_ptr&& a):m_ptr(a.m_ptr){
+	std::cout<<"Auto_ptr: move constructor is called"<<std::endl;
         a.m_ptr = nullptr;
 }
 //move assignement
 template<class T>
 Auto_ptr<T>& Auto_ptr<T>::operator=(Auto_ptr&& a){
+	std:: cout<<"Auto_ptr: move assignment is called"<<std::endl;
         if(this==&a)
                 return *this;
         delete m_ptr;
