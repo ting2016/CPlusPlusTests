@@ -7,7 +7,7 @@ int IntArray::getLength(){
 
 int IntArray::erase(){
     delete[] m_data;
-    m_data = 0;
+    m_data = nullptr;
     m_length = 0;
 }
 

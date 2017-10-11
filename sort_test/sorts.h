@@ -56,8 +56,10 @@ void ting::sorts::bubbleSort(std::vector<T>& v){
 }
 //assume v[0] to v[j-1] is sorted, just every loop while to insert v[j] to keep the order 
 template <class T>
+//at begin v[0] is sorted
 void ting::sorts::insertSort(std::vector<T>& v){
-	for(int i=0;i<v.size();i++){
+	for(int i=1;i<v.size();i++){
+		//from 0 to i-1 is sorted, find a right place for i
 		for(int j=i;j>0;j--){
 			if(v[j]<v[j-1]){
 				std::swap(v[j],v[j-1]);
@@ -67,7 +69,7 @@ void ting::sorts::insertSort(std::vector<T>& v){
 		}
 	}
 }
-//find the minium from v[j] to v[v.size()] 
+//find the minium from v[j] to v[v.size()-1] 
 template <class T>
 void ting::sorts::selectSort(std::vector<T>& v){
 	for(int i =0; i<v.size();i++){

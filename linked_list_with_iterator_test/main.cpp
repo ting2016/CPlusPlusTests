@@ -47,10 +47,16 @@ int main(){
 	std::cout<<std::endl;
 
 	//test for const iterator
-	//auto it1_const = list1.cbegin();
-	it1 = list1.begin();
-	//*it1_const = 10;//this will trigger a compile error as try to reassign value to a variable through a const pointer
-	*it1 = 10;
-	std::cout<<"new value for the first elem for list1 after reassign:";
-	(*it1).print();
+	const Linkedlist<int> const_list(list1);
+	std::cout<<"const_list:";
+	const_list.print();
+	std::cout<<std::endl;
+	auto const_it = const_list.cbegin();
+	std::cout<<"const_list points to: ";
+	//auto it = const_list.begin(); //this won't compile, a const object can not call a non-const member function
+	(*const_it).print();
+	(*(++const_it)).print();
+	const_list.print();
+	//*const_it=10;//this won't compile as, the pointer in linkedlist_const_iterator is set to const
+	//const_list.print();
 }

@@ -5,6 +5,7 @@ template<class T>
 bool operator!=(const Linkedlist_const_iterator<T>& li1, const Linkedlist_const_iterator<T>& li2);
 template<class T>
 bool operator==(const Linkedlist_const_iterator<T>& li1, const Linkedlist_const_iterator<T>& li2);
+
 template<class T>
 class Linkedlist_const_iterator{
 
@@ -12,13 +13,12 @@ friend bool operator!=<T>(const Linkedlist_const_iterator<T>& li1, const Linkedl
 friend bool operator==<T>(const Linkedlist_const_iterator<T>& li1, const Linkedlist_const_iterator<T>& li2);
 
 private:
-	const Node<T>* currentPosition;
+	const Node<T>* currentPosition;//this has to be set to const, as const iterator is designed for const linkedlist object. this pointer is pointed 					//to a const element
 public:
-	Linkedlist_const_iterator(Node<T>* pn):currentPosition(pn){};
-	Linkedlist_const_iterator():currentPosition(nullptr){};
+	Linkedlist_const_iterator(Node<T>* pn=nullptr):currentPosition(pn){};
 	Linkedlist_const_iterator& operator++();
 	Linkedlist_const_iterator operator++(int);
-	Node<T>& operator*();
+	const Node<T>& operator*();//this has to return const reference, as pointer pointing to const object can only be deferenced to const object
 };
 
 template<class T>
@@ -48,7 +48,7 @@ Linkedlist_const_iterator<T> Linkedlist_const_iterator<T>::operator++(int){
 }
 
 template<class T>
-Node<T>& Linkedlist_const_iterator<T>::operator*(){
+const Node<T>& Linkedlist_const_iterator<T>::operator*(){
 	if(currentPosition!=nullptr)
 		return *currentPosition;
 	else

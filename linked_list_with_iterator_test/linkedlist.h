@@ -17,13 +17,13 @@ public:
 	Linkedlist& operator=(Linkedlist& otherl);
 	~Linkedlist();
 	void empty();
-	void print();
+	void print() const;
 	void insertToHead(const T& newElem);
 	void insertToTail(const T& newElem);
-	Iterator begin(){return Linkedlist_iterator<T>(head);}
-	Iterator end(){ return Linkedlist_iterator<T>();}
-	Const_Iterator cbegin(){return Linkedlist_const_iterator<T>(head);}
-	Const_Iterator cend(){ return Linkedlist_const_iterator<T>();}
+	Iterator begin(){return Iterator(head);}
+	Iterator end(){ return Iterator();}
+	Const_Iterator cbegin() const{return Const_Iterator(head);}
+	Const_Iterator cend() const{return Const_Iterator();}
 };
 
 template<class T>
@@ -74,7 +74,7 @@ Linkedlist<T>::~Linkedlist(){
 }
 
 template<class T>
-void Linkedlist<T>::print(){
+void Linkedlist<T>::print() const{
 	Node<T>* tempP = head;
 	while(tempP){
 		std::cout<<" "<<tempP->elem;

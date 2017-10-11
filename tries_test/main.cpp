@@ -12,7 +12,7 @@ public:
     void setWordMarker() { mMarker = true; }
     Node* findChild(char c);
     void appendChild(Node* child) { mChildren.push_back(child); }
-    vector<Node*> children() { return mChildren; }
+    vector<Node*>& children() { return mChildren; }
 
 private:
     char mContent;

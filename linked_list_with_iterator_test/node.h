@@ -27,8 +27,8 @@ public:
 		elem = other;
 		next = nullptr;
 	}
-	void print(){std::cout<<" "<< elem;}
-	T getElem(){return elem;}
+	void print() const{std::cout<<" "<< elem<<std::endl;}
+	T& getElem(){return elem;}
 };
 
 template<class T>
