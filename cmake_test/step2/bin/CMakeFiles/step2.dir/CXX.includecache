@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../MathFunctions/MathFunctions.h
+
+/home/ting/Proj/CPlusPlusTests/cmake_test/step2/tutorial.cpp
+step2Config.h
+/home/ting/Proj/CPlusPlusTests/cmake_test/step2/step2Config.h
+math.h
+-
+stdio.h
+-
+stdlib.h
+-
+MathFunctions.h
+/home/ting/Proj/CPlusPlusTests/cmake_test/step2/MathFunctions.h
+
+step2Config.h
+

@@ -3,5 +3,8 @@
 
 int main(){
 	using namespace ting;
-	Vector<Person> v;
+	Vector<int> v1;
+	v1.print();
+	Vector<int> v2(4, 0);
+	v2.print();
 }

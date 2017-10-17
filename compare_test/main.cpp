@@ -73,11 +73,14 @@ int main(){
 	personVec.push_back(Person(25, "liangliang"));
 	std::cout<<"before sort personVec:\n";
 	display(personVec.cbegin(), personVec.cend());
-	//method1: using compare class to do the comparision
-	std::sort(personVec.begin(), personVec.end(),Compare_class<Person>());
-	//method2: using compare function to do the comparison
+	//method1: using an object of compare class to do the comparision
+	Compare_class<Person> compare_class;
+	std::sort(personVec.begin(), personVec.end(), compare_class);
+	//method2: using compare class to do the comparision
+	//std::sort(personVec.begin(), personVec.end(),Compare_class<Person>());
+	//method3: using compare function to do the comparison
 	//std::sort(personVec.begin(), personVec.end(), compare_func<Person>);
-	//mdthod3: using operator '<' as the comparator
+	//mdthod4: using operator '<' as the comparator, you need to reload operator'<' for the objects to be sorted
 	//std::sort(personVec.begin(), personVec.end());
 	std::cout<<"after sort personVec:\n";
 	display(personVec.cbegin(), personVec.cend());
