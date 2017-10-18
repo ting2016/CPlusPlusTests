@@ -1,4 +1,5 @@
-#include "vector.h"
+//#include "vector.h"
+#include "vector_noAlloc.h"
 #include "../person.h"
 
 int main(){

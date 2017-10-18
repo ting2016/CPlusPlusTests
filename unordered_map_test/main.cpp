@@ -14,9 +14,12 @@ namespace ting{
 			//friend class Hash_function<Person>;
 			Person(const int age, const bool sex):age(age),sex(sex){}
 			//need to overload == operator
-   			bool operator==(const Person& other_p){return ((age==other_p.age)&&(sex==other_p.sex));}
+   			friend bool operator==(const Person& p1, const Person& p2);
 			friend std::ostream& operator<<(std::ostream& o, const Person& p);
 		};
+	    bool operator==(const Person& p1, const Person& p2){
+		return ((p1.age==p2.age)&&(p1.sex==p2.sex));
+	    }
 
 	    //hash class template
             template<class key>
@@ -64,7 +67,7 @@ namespace ting{
             template<class key, class value,class F = Hash_function<key>>
             class My_Unordered_Map{
                     public:
-                            typedef int (*hasher)();
+			    using hasher = F;
                             My_Unordered_Map(){
                                     for(int i = 0; i<BUCKET_SIZE;i++){
                                             my_map[i]= nullptr;
@@ -170,14 +173,14 @@ namespace ting{
                             }
                             //return pointer to the hash function
                             hasher hash_function() const{
-                                return hashFunc();
+                                return hashFunc;
                             }
                     private:
                             //an arry of pointers point to Node objects
                             Node<key, value>* my_map[BUCKET_SIZE];
                             //stores the number of pairs in the map
                             size_t num;
-                            F hashFunc;
+                            hasher hashFunc;
             };
         }
 }
@@ -193,12 +196,18 @@ int main(){
     myMap.erase(43);
     myMap.print();
 /*************test for custom class key********************/
-    My_Unordered_Map<Person, std::string, Hash_function<Person>> myCustomMap;
+    using hash_map_person = My_Unordered_Map<Person, std::string, Hash_function<Person>>;
+    hash_map_person myCustomMap;
     myCustomMap.insert(Person(33,1),"wangming");
     myCustomMap.insert(Person(33,0),"lingling");
     myCustomMap.insert(Person(53,1),"niuniu");
     myCustomMap.insert(Person(11,0),"hehe");
     myCustomMap.print();
+/*****************test for hash_function()************************/
+    hash_map_person::hasher fn = myCustomMap.hash_function();
+    Person newP(55,1);
+    std::cout<<"hash code for newP: " << fn(newP) << std::endl;
+	
 
 }
 

@@ -17,7 +17,6 @@ using const_pointer = const value_type*;
 private:
 	value_type array[N];
 public:
-	//Array(const Array<T, N>& other_array);
 	size_type size(){return N;}
 	bool empty(){return (N==0);}
 	reference operator[](size_type index){return array[index];}

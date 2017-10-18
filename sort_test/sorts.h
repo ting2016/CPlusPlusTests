@@ -234,17 +234,4 @@ void ting::sorts::heapSortTest(){
 	display(v);
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 #endif
