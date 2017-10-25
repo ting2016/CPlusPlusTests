@@ -13,7 +13,7 @@ Auto_ptr<Resource> generateResource()
 int main()
 {
 	Auto_ptr<Resource> mainres;//this will invoke default constructor
-	mainres = generateResource(); // this assignment will invoke the move assignment
+	mainres = generateResource(); // this assignment will invoke the move assignment, as the return value of generateResource() is an r-value
  	/************************************************/
 	Auto_ptr<Resource> mainres2(mainres);//this will invoke copy constructor 
 	/*****************************************************/
