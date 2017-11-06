@@ -1,0 +1,3 @@
+/home/ting/Proj/CPlusPlusTests/cMakeTest/bin/CMakeFiles/rebuild_cache.dir
+/home/ting/Proj/CPlusPlusTests/cMakeTest/bin/CMakeFiles/hello.dir
+/home/ting/Proj/CPlusPlusTests/cMakeTest/bin/CMakeFiles/edit_cache.dir

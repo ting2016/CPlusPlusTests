@@ -1,0 +1,10 @@
+main: main.c lib.c
+#a : main.o lib.o
+	#cc -o a main.o lib.o
+
+#main.o: main.c lib.h
+#	cc -c main.c
+
+#lib.o : lib.c lib.h
+#	cc -c lib.c
+

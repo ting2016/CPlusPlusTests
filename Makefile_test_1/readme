@@ -1,0 +1,6 @@
+to compile on terminal, before using the command below, make sure *.c and *.h files are all in current directory
+
+$gcc -o hellomake hellomake.c func.c -I.
+
+
+this example comes from http://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/: Makefile 4 with a little modification
